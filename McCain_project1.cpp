@@ -46,6 +46,8 @@ for(int i = 0; i < voltage.size(); i++)
     {
     chargeCap = current * timeVect[i];
     cout << "The charge capacity is: " << chargeCap << endl;
+    dischargeCap = current * (timeVect[timeVect.size() - 1] - timeVect[i]);
+    cout << "The discharge capacity is: " << dischargeCap << endl;
     }
 
 
