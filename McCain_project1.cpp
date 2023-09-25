@@ -44,10 +44,14 @@ for(int i = 0; i < voltage.size(); i++)
     //calculate charging values
     if(i == maxVoltIndex)
     {
-    chargeCap = current * timeVect[i];
-    cout << "The charge capacity is: " << chargeCap << endl;
+     chargeCap = current * timeVect[i];
+     cout << "The charge capacity is: " << chargeCap << endl;
+
     dischargeCap = current * (timeVect[timeVect.size() - 1] - timeVect[i]);
     cout << "The discharge capacity is: " << dischargeCap << endl;
+
+    coulEff = (dischargeCap / chargeCap) * 100;
+    cout << "The Coulombic Efficiency is: " << coulEff << "%";
     }
 
 
@@ -62,11 +66,8 @@ for(int i = 0; i < voltage.size(); i++)
 
 //calculate average discharge
 dischargeAvg = (dischargeSum / dischargeSize);
-coulEff = (dischargeCap / chargeCap) * 100;
 cout << "The average discharge voltage is " << dischargeAvg << endl;
 cout << "The total discharge energy is: " << dischargeEng << endl;
-cout << "The Coulombic Efficiency is: " << coulEff << "%";
-
 
 }
 
